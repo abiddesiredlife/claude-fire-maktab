@@ -251,8 +251,8 @@ tbody tr:hover{background:var(--nazll)}
 .rc{
   background:#fff;
   width:210mm;
-  min-height:270mm;
-  margin:0 auto 24px;
+  max-width:100%;
+  margin:0 auto 20px;
   font-family:'Amiri','Noto Nastaliq Urdu',serif;
   direction:rtl;
   position:relative;
@@ -260,7 +260,10 @@ tbody tr:hover{background:var(--nazll)}
   border:1px solid #bbb;
   border-radius:4px;
   box-shadow:0 4px 20px rgba(0,0,0,.14);
+  page-break-inside:avoid;
+  break-inside:avoid;
   page-break-after:always;
+  break-after:page;
 }
 
 /* Watermark logo in center of report card */
@@ -279,7 +282,7 @@ tbody tr:hover{background:var(--nazll)}
   z-index:0;
 }
 
-.rc-body{position:relative;z-index:1;padding:14mm 14mm 10mm}
+.rc-body{position:relative;z-index:1;padding:8mm 12mm 8mm}
 
 /* — Top border band — */
 .rc-topband{
@@ -294,15 +297,15 @@ tbody tr:hover{background:var(--nazll)}
 /* — Header — */
 .rc-hd{
   display:flex;align-items:center;justify-content:space-between;
-  padding:12px 0 10px;
+  padding:8px 0 8px;
   border-bottom:2px solid;
-  margin-bottom:10px;
+  margin-bottom:7px;
 }
 .rc-naz .rc-hd{border-color:var(--naz)}
 .rc-mom .rc-hd{border-color:var(--mom)}
 
 .rc-hd-logo{
-  width:64px;height:64px;
+  width:54px;height:54px;
   border-radius:50%;
   border:2px solid;
   object-fit:contain;padding:3px;
@@ -313,13 +316,13 @@ tbody tr:hover{background:var(--nazll)}
 .rc-mom .rc-hd-logo{border-color:var(--mom)}
 
 .rc-hd-mid{flex:1;text-align:center;padding:0 12px}
-.rc-school-arabic{font-family:'Amiri',serif;font-size:24px;font-weight:700;line-height:1.6}
+.rc-school-arabic{font-family:'Amiri',serif;font-size:20px;font-weight:700;line-height:1.5}
 .rc-naz .rc-school-arabic{color:var(--naz)}
 .rc-mom .rc-school-arabic{color:var(--mom)}
-.rc-address{font-family:'Amiri',serif;font-size:11px;color:#555;margin:2px 0}
+.rc-address{font-family:'Amiri',serif;font-size:10px;color:#555;margin:1px 0}
 .rc-exam-title{
-  font-family:'Amiri',serif;font-size:12.5px;font-weight:700;
-  padding:4px 14px;border-radius:4px;display:inline-block;margin-top:5px;
+  font-family:'Amiri',serif;font-size:11.5px;font-weight:700;
+  padding:3px 12px;border-radius:4px;display:inline-block;margin-top:3px;
   color:#fff;
 }
 .rc-naz .rc-exam-title{background:var(--naz)}
@@ -329,21 +332,21 @@ tbody tr:hover{background:var(--nazll)}
 .rc-info{
   display:grid;grid-template-columns:1fr 1fr 1fr;
   border:1.5px solid;border-radius:5px;overflow:hidden;
-  margin-bottom:12px;
+  margin-bottom:8px;
 }
 .rc-naz .rc-info{border-color:var(--naz)}
 .rc-mom .rc-info{border-color:var(--mom)}
-.rc-ic{padding:7px 12px;border-left:1px solid;display:flex;flex-direction:column;gap:1px}
+.rc-ic{padding:5px 10px;border-left:1px solid;display:flex;flex-direction:column;gap:0px}
 .rc-ic:last-child{border-left:none}
 .rc-naz .rc-ic{border-color:var(--naz)}
 .rc-mom .rc-ic{border-color:var(--mom)}
-.rc-il{font-size:9.5px;color:#777;font-family:'Amiri',serif}
-.rc-iv{font-size:13.5px;font-weight:700;color:#111;font-family:'Amiri',serif;line-height:1.6}
+.rc-il{font-size:9px;color:#777;font-family:'Amiri',serif}
+.rc-iv{font-size:13px;font-weight:700;color:#111;font-family:'Amiri',serif;line-height:1.5}
 
 /* — Marks table — */
-.rc-tbl{width:100%;border-collapse:collapse;margin-bottom:12px;font-size:12.5px}
+.rc-tbl{width:100%;border-collapse:collapse;margin-bottom:8px;font-size:12px}
 .rc-tbl th,.rc-tbl td{
-  padding:7px 12px;
+  padding:5px 10px;
   text-align:right;
   border-bottom:1px solid #eee;
   border-right:1px solid #eee;
@@ -374,38 +377,35 @@ tbody tr:hover{background:var(--nazll)}
 /* — Summary boxes — */
 .rc-sum{
   display:grid;grid-template-columns:repeat(4,1fr);
-  gap:1px;background:var(--bdr);
-  border-radius:9px;overflow:hidden;margin-bottom:10px;
+  gap:1px;background:#ccc;
+  border-radius:7px;overflow:hidden;margin-bottom:6px;
 }
-.rc-si{background:#fff;padding:9px;text-align:center}
-.rc-sv{font-family:'Amiri',serif;font-size:22px;font-weight:700}
+.rc-si{background:#fff;padding:5px 4px;text-align:center}
+.rc-sv{font-family:'Amiri',serif;font-size:18px;font-weight:700}
 .rc-naz .rc-sv{color:var(--naz)} .rc-mom .rc-sv{color:var(--mom)}
-.rc-sl{font-size:10px;color:#777;margin-top:1px}
+.rc-sl{font-size:9px;color:#777;margin-top:0}
 
 /* — Pass/Fail + Rank row — */
-.rc-pfrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.rc-pf{display:inline-block;padding:5px 18px;border-radius:5px;font-family:'Amiri',serif;font-size:16px;font-weight:700}
+.rc-pfrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.rc-pf{display:inline-block;padding:3px 14px;border-radius:5px;font-family:'Amiri',serif;font-size:14px;font-weight:700}
 .rc-pass{background:#d4f4e4;color:#1a6b3a}
 .rc-fail{background:#ffe0e0;color:#c0392b}
-.rc-rank-lbl{font-family:'Amiri',serif;font-size:14px;color:#555}
-.rc-rank-val{font-family:'Amiri',serif;font-size:20px;font-weight:700}
+.rc-rank-lbl{font-family:'Amiri',serif;font-size:11px;color:#555}
+.rc-rank-val{font-family:'Amiri',serif;font-size:17px;font-weight:700}
 .rc-naz .rc-rank-val{color:var(--naz)} .rc-mom .rc-rank-val{color:var(--mom)}
 
 /* — Grading key — */
 .rc-grading{
-  background:#f9f8f5;border:1px dashed #ccc;border-radius:6px;
-  padding:6px 12px;font-size:10px;color:#666;text-align:center;
-  margin-bottom:14px;font-family:'Amiri',serif;line-height:2;
+  background:#f9f8f5;border:1px dashed #ccc;border-radius:5px;
+  padding:4px 10px;font-size:9.5px;color:#666;text-align:center;
+  margin-bottom:8px;font-family:'Amiri',serif;line-height:1.8;
 }
 
-/* — Divider line — */
-.rc-divider{height:1px;background:linear-gradient(90deg,transparent,#aaa,transparent);margin:14px 0}
-
 /* — Signatures — */
-.rc-sigs{display:flex;justify-content:space-between;padding-top:14px;border-top:1px dashed #bbb;margin-top:6px}
-.rc-sig{text-align:center;min-width:120px}
-.rc-sig-line{width:120px;height:1px;background:#444;margin:0 auto 5px}
-.rc-sig-lbl{font-size:12px;color:#444;font-family:'Amiri',serif}
+.rc-sigs{display:flex;justify-content:space-between;padding-top:10px;border-top:1px dashed #bbb;margin-top:4px}
+.rc-sig{text-align:center;min-width:100px}
+.rc-sig-line{width:100px;height:1px;background:#444;margin:0 auto 4px}
+.rc-sig-lbl{font-size:11px;color:#444;font-family:'Amiri',serif}
 
 /* — Bottom border — */
 .rc-bottomband{
@@ -420,19 +420,31 @@ tbody tr:hover{background:var(--nazll)}
   .main{margin-right:0!important}
   .pg-wrap{padding:0!important}
   body::before{display:none}
+  body{background:#fff;display:block}
+  .rep-area{display:block}
   .rc{
     width:100%;margin:0;
     box-shadow:none;border:none;border-radius:0;
+    page-break-inside:avoid;
+    break-inside:avoid;
     page-break-after:always;
+    break-after:page;
     -webkit-print-color-adjust:exact;
     print-color-adjust:exact;
+  }
+  .rc:last-child{
+    page-break-after:avoid!important;
+    break-after:avoid!important;
+  }
+  @page{
+    size:A4 portrait;
+    margin:0;
   }
   .rc-topband,.rc-bottomband,.th-main,
   .rc-naz .rc-info,.rc-mom .rc-info,
   .rc-naz .th-sec-row td,.rc-mom .th-sec-row td,
   .rc-naz .td-total,.rc-mom .td-total,
   .rc-naz .rc-sum,.rc-mom .rc-sum{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  body{background:#fff}
   .pg-wrap .page{display:block!important}
 }
 
@@ -709,7 +721,12 @@ document.getElementById('sb-logo').src = LOGO;
 document.documentElement.style.setProperty('--wm-img', `url("${LOGO}")`);
 
 // ============================================================
-// DATA — Exact from PDFs (سالانہ امتحان فروری ۲۰۲۶ / ۱۴۴۷ھ)
+// URDU NUMERALS CONVERTER
+// ============================================================
+function toUrdu(n) {
+  if (n === null || n === undefined || n === '—' || n === '-') return '—';
+  return String(n).replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+}
 // ============================================================
 const EXAM_TITLE  = 'سالانہ امتحان فروری ۲۰۲۶ء / ۱۴۴۷ھ';
 const EXAM_YEAR   = '۲۰۲۵-۲۶';
@@ -1379,10 +1396,10 @@ function genReports(){
       }
       secSubjs.forEach(sub=>{
         const obt=res[sub.name]??'—';
-        rows+=`<tr><td class="td-subj">${sub.name}</td><td class="td-max">${sub.max}</td><td class="td-obt">${obt}</td></tr>`;
+        rows+=`<tr><td class="td-subj">${sub.name}</td><td class="td-max">${toUrdu(sub.max)}</td><td class="td-obt">${toUrdu(obt)}</td></tr>`;
       });
     });
-    rows+=`<tr><td class="td-total" colspan="1">مجموعی کل</td><td class="td-total" style="text-align:center">${total}</td><td class="td-total" style="text-align:center">${tot}</td></tr>`;
+    rows+=`<tr><td class="td-total" colspan="1">مجموعی کل</td><td class="td-total" style="text-align:center">${toUrdu(total)}</td><td class="td-total" style="text-align:center">${toUrdu(tot)}</td></tr>`;
 
     return `<div class="rc ${rcCls}">
   <div class="rc-topband ${isNaz?'':'mom'}"></div>
@@ -1420,9 +1437,9 @@ function genReports(){
 
     <!-- SUMMARY BOXES -->
     <div class="rc-sum">
-      <div class="rc-si"><div class="rc-sv">${tot}</div><div class="rc-sl">حاصل نمبر</div></div>
-      <div class="rc-si"><div class="rc-sv">${total}</div><div class="rc-sl">کل نمبر</div></div>
-      <div class="rc-si"><div class="rc-sv">${pct}%</div><div class="rc-sl">فیصد</div></div>
+      <div class="rc-si"><div class="rc-sv">${toUrdu(tot)}</div><div class="rc-sl">حاصل نمبر</div></div>
+      <div class="rc-si"><div class="rc-sv">${toUrdu(total)}</div><div class="rc-sl">کل نمبر</div></div>
+      <div class="rc-si"><div class="rc-sv">${toUrdu(pct)}%</div><div class="rc-sl">فیصد</div></div>
       <div class="rc-si"><div class="rc-sv" style="color:${g.color}">${g.g}</div><div class="rc-sl">گریڈ</div></div>
     </div>
 
@@ -1431,7 +1448,7 @@ function genReports(){
       <span class="rc-pf ${passed?'rc-pass':'rc-fail'}">${passed?'✓ پاس':'✗ فیل'}</span>
       <div style="text-align:center">
         <div class="rc-rank-lbl">رینک</div>
-        <div class="rc-rank-val">${rk}</div>
+        <div class="rc-rank-val">${toUrdu(rk)}</div>
       </div>
     </div>
 
